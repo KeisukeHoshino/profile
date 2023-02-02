@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+    <!-- js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="../app/page.module.css">
+    <link rel="stylesheet" href="../../dist/output.css">
+    <title>Document</title>
+</head>
+
+<body class="main">
+    <header class="flex items-center h-12 fixed top-0 w-full justify-between md:h-16 bg-sky-200 z-10">
+        <h1 id="logo" class="block ml-[4%]">
+            <a class="text-3xl px-2 bg-sky-300 rounded-2xl py-2 h-full" href="">
+                HOSHINO
+            </a>
+        </h1>
+
+        <nav class="h-full flex xl:mr-[2%]">
+            <ul class="flex h-full">
+                <li class="navList">
+                    <a class="navA" href="#profile">
+                        プロフィール
+                    </a>
+                </li>
+                <li class="navList">
+                    <a class="navA" href="#origin">
+                        出身地
+                    </a>
+                </li>
+                <li class="navList">
+                    <a class="navA" href="#love_artist">
+                        アーティスト
+                    </a>
+                </li>
+                <li class="navList">
+                    <a class="navA" href="#love_anime">
+                        おすすめアニメ
+                    </a>
+                </li>
+                <li class="navList">
+                    <a class="navA" href="#future">
+                        今後
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main class="">
+
+        <div class="container">
+            <section id="profile" class="mt-28 mb-20 bg-sky-50 rounded-xl p-20 drop-shadow-md opacity-95">
+                <h2 id="title_profile" class="title">
+                    プロフィール
+                </h2>
+                <div class="md:flex justify-center">
+                    <div class="md:mr-[4%]">
+                        <img class="w-[650px]" src="../../public//profile.JPG" alt="" />
+                    </div>
+                    <div class="md:ml-[5%]">
+                        <ul class="lg:text-2xl tracking-wide leading-loose">
+                            <li class="profilelist">氏名：星野　圭助</li>
+                            <li class="profilelist">年齢：25歳
+                            </li>
+                            <li class="profilelist">生年月日：1997年8月19日</li>
+                            <li class="profilelist">趣味：アニメ・ゲーム・読書</li>
+                            <li class="profilelist">好きな食べ物：ラーメン・海鮮系</li>
+                            <li class="profilelist">好きな言葉：努力した者が全て報われるとは限らん。
+                                しかし、成功した者は皆すべからく努力しておる！！</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section id="origin" class="container opacity-95 bg-pink-50 rounded-xl py-20 mb-10">
+            <h2 class="title mb-10">出身地</h2>
+            <div class="" aria-label="の基本的なHTML">
+                    <ul class="slide-items">
+                        <li class="adjustment">
+                            <p class="text-center text-2xl">群馬県片品村</p>
+                            <Image class="" src="../../public/gunma.jpg" alt="" />
+                        </li>
+                        <li class="">
+                            <p class="text-center text-2xl">群馬県</p>
+                            <Image class="" src="../../public//oze.jpg" alt="" />
+                        </li>
+                        <li class="">
+                            <p class="text-center text-2xl">群馬県</p>
+                            <Image class="m-auto" src="../../public//kusatsu.jpg" alt="" />
+                        </li>
+                    </ul>
+            </div>
+        </section>
+
+        <section id="love_artist" class="h-[1200px] bg-white">
+            <h2 class="text-4xl bg-white text-center pb-10 pt-10">好きなアーティスト</h2>
+
+            <div class="xl:Lisa bg-[url('/public/LiSAsm.jpg')] lg:bg-[top 50px right 120px] bg-fix">
+
+            </div>
+            <div class="radwimps bg-fix"></div>
+            <div class="claris bg-fix"></div>
+        </section>
+
+        <section id="love_anime" class="h-[700px]">
+            <h2 class="text-4xl text-center">好きなアニメ</h2>
+        </section>
+
+        <section id="future">
+            <h2 class="text-4xl">今後</h2>
+            <p></p>
+        </section>
+
+    </main>
+    <script src="index.js"></script>
+</body>
+
+</html>

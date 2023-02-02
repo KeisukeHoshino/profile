@@ -19,11 +19,11 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
+    "baseUrl": "./", /* Base directory to resolve non-absolute module names. */
     "paths": {
       "@/*": ["./src/*"]
-    }
+    } /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/page.jsx"],
   "exclude": ["node_modules"]
 }
