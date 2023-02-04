@@ -22,7 +22,8 @@
     <div class="start">
         <p><img src="/public/Playlist_logo.png" alt=""></p>
     </div>
-    <header class="flex items-center h-12 fixed top-0 w-full justify-between md:h-16 bg-sky-200 z-10 text-gray-700">
+    <header id="header"
+        class="flex items-center h-12 fixed top-0 w-full justify-between md:h-16 bg-sky-200 z-10 text-gray-700">
         <h1 id="logo" class="block ml-[4%]">
             <a class="text-3xl px-2 bg-sky-300 rounded-2xl py-2 h-full" href="">
                 HOSHINO
@@ -64,15 +65,15 @@
     <main class="">
 
         <div class="container">
-            <section id="profile" class="mt-16 mb-10 rounded-xl p-16 drop-shadow-md opacity-95 text-gray-900">
+            <section id="profile" class="mt-16 mb-10 rounded-xl p-4 drop-shadow-md opacity-95 text-gray-900">
                 <h2 id="title_profile" class="title">
                     プロフィール
                 </h2>
                 <div class="md:flex justify-center">
                     <div class="md:mr-[4%]">
-                        <img class="w-[650px]" src="../../public//profile.JPG" alt="" />
+                        <img class="w-[90%] mx-auto sm:w-[90%] md:w-[800px]" src="../../public//profile.JPG" alt="" />
                     </div>
-                    <div class="md:ml-[5%]">
+                    <div class="md:ml-[5%] lg:mt-6">
                         <ul class="lg:text-2xl tracking-wide leading-loose">
                             <li class="profilelist">氏名：星野　圭助</li>
                             <li class="profilelist">年齢：25歳
@@ -89,16 +90,12 @@
             </section>
         </div>
 
-        <section id="origin"
-            class="rounded-xl border-t h-[700px]">
-            <div class="container bg-gray-50 pb-20 pt-10 my-10 h-[600px] rounded-lg">
+        <section id="origin" class="rounded-xl border-t sm:h-[850px] md:h-[1000px]">
+            <div class="container bg-gray-400 pb-20 pt-10 my-10 h-[750px] md:h-[850px] lg:h-[700px] rounded-lg">
                 <h2 class="title mb-10">出身地</h2>
-                <div class="flex justify-around">
-                    <div>
-                        <p class="">出身地は群馬県北部の片品村です</p>
-                    </div>
+                <div class="flex flex-col lg:flex-row-reverse justify-around basis-1/2">
 
-                    <div class="w-[700px] h-[500px]" aria-label="の基本的なHTML">
+                    <div class="lg:w-[600px] basis-1/2 w-[100%] h-[100%]" aria-label="の基本的なHTML">
                         <ul class="slide-items rounded-lg">
                             <li class="">
                                 <p class="text-center text-2xl">群馬県片品村</p>
@@ -114,11 +111,17 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="ml-6">
+                        <p class="">出身地は群馬県北部の片品村です</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi dicta facere ipsa at optio
+                            ullam praesentium officia magnam mollitia, magni distinctio vitae cupiditate nulla,
+                            dignissimos nisi quasi eos vero ratione.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class='text-grey-700 border-t border-gray-200'>
+        <section id="skill" class='text-grey-700 border-t border-gray-200'>
             <div class='container px-5 py-24 mx-auto flex flex-wrap'>
                 <div class='mb-10 lg:mb-0 w-full lg:w-1/2 flex justify-center'>
                     <img src="/public/pc.jpg" alt="" class='rounded w-[640px]' />
@@ -129,31 +132,31 @@
                     <div class='w-full'>
                         <h2>HTML</h2>
                         <div class='shadow bg-green-100 mt-2 w-full'>
-                            <div class='bg-green-600 text-xl leading-none text-center text-white w-[85%]'>
+                            <div class='action w-[85%]'>
                                 85%
                             </div>
                         </div>
                         <h2>CSS</h2>
                         <div class='shadow bg-green-100 mt-2 w-full'>
-                            <div class='bg-green-600 text-xl leading-none text-center text-white w-[75%]'>
+                            <div class='action w-[75%]'>
                                 75%
                             </div>
                         </div>
                         <h2>JavaScript</h2>
                         <div class='shadow bg-green-100 mt-2 w-full'>
-                            <div class='bg-green-600 text-xl leading-none text-center text-white w-[35%]'>
+                            <div class='action w-[35%]'>
                                 30%
                             </div>
                         </div>
                         <h2>Java</h2>
                         <div class='shadow bg-green-100 mt-2 w-full'>
-                            <div class='bg-green-600 text-xl leading-none text-center text-white w-[20%]'>
+                            <div class='action w-[20%]'>
                                 20%
                             </div>
                         </div>
                         <h2>PHP</h2>
                         <div class='shadow bg-green-100 mt-2 w-full'>
-                            <div class='bg-green-600 text-xl leading-none text-center text-white w-[20%]'>
+                            <div class='action w-[20%]'>
                                 20%
                             </div>
                         </div>
@@ -162,8 +165,8 @@
             </div>
         </section>
 
-        <section id="love_artist" class="h-[1200px] bg-white">
-            <h2 class="text-4xl bg-white text-center pb-10 pt-10">好きなアーティスト</h2>
+        <section id="love_artist" class="h-[1200px] bg-white border-t border-gray-20 mt-8">
+            <h2 class="text-4xl bg-white text-center pb-10 pt-10 my-5">好きなアーティスト</h2>
 
             <div class="xl:Lisa bg-[url('/public/LiSAsm.jpg')] lg:bg-[top 50px right 120px] bg-fix">
 
@@ -172,8 +175,16 @@
             <div class="claris bg-fix"></div>
         </section>
 
-        <section id="love_anime" class="h-[700px]">
+        <section id="love_anime" class="h-[700px] container">
             <h2 class="text-4xl text-center">好きなアニメ</h2>
+            <ul class="flex justify-around">
+                <li><button>ロボット</button></li>
+            <li><button>アクション</button></li>
+            <li><button>コメディ</button></li>
+            <li><button>恋愛</button></li>
+            <li><button>日常</button></li>
+            <li><button>スポーツ</button></li>
+        </ul>
         </section>
 
         <section id="future">

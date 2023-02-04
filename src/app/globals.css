@@ -9,6 +9,8 @@
 }
 
 @layer components {
+    /*
+//fvのアクション
     .start {
 	background: #FFF;
 	position: fixed;
@@ -27,6 +29,7 @@
 	z-index: 9999;
 	width: 280px;
 }
+*/
     .navList {
         @apply hover:bg-sky-50 hover:ease-in duration-200 rounded-2xl h-16 w-32;
     }
@@ -39,20 +42,20 @@
     }
 
     .profilelist {
-        @apply mt-4 pb-2 border-dashed  border-orange-200 border-b-4 text-gray-900;
+        @apply mt-4 md:mt-0 mb-4 pb-2 border-dashed  border-orange-200 border-b-4 text-gray-900;
     }
-    .main{
+    .main {
         @apply bg-[url('/public/sora.jpg')] bg-contain bg-no-repeat bg-[center_top];
     }
 
-    .kinako{
+    .kinako {
         @apply bg-[url('/public/kinako.png')] bg-no-repeat bg-[right_-15rem_top_5rem] bg-[length:750px_600px];
     }
 
     .bg-fix {
         height: 300px;
         overflow: auto;
-        background: #eee none no-repeat center 0/cover fixed;
+        background: #eee none no-repeat center 0 / cover fixed;
     }
     .Lisa {
         @apply bg-[top_20px_right] bg-cover bg-fixed bg-[url('/public/LiSA.jpg')];
@@ -64,6 +67,38 @@
         background-image: url("/public/Claris.jpg");
     }
 
+    #skill {
+        opacity: 0;
+        transform: translate(0, 100px);
+        transition: all 1s;
+    }
+
+    #skill.active {
+        display: block;
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+
+    .action.skillPercent {
+        @apply bg-green-600 text-xl leading-none text-center text-white duration-300;
+    }
+
+    .action.skillPercent {
+        animation: wiggle 2s;
+    }
+    @keyframes wiggle {
+        from {
+            --tw-bg-opacity: 1;
+            background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+            width: 0%;
+        }
+
+        to {
+            --tw-bg-opacity: 1;
+            background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+
+        }
+    }
     body {
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         line-height: 1.6;
@@ -93,14 +128,12 @@
 スライダーstart
 --------------------------------------------------------------------------*/
     .slide-items {
-        width: 90%;
-        height: 90%;
-        margin: auto;
+        @apply w-[90%] h-[90%] m-auto;
     }
 
     .slick-dots li button:before {
         font-size: 50px;
-        top: 20px;
+        top: 50px;
     }
     .slide-arrow {
         background-color: #333;
@@ -133,12 +166,8 @@
         padding: 0;
     }
 
-
-
     .slide-items img {
-        width: 100%;
-        height: 20vw;
-        object-fit: cover;
+        @apply w-full lg:h-[450px] h-[70vw] sm:h-[60vw] md:h-[50vw] sm:object-cover max-w-full;
     }
     /*-------------------------------------------------------------------------
 スライダーend
