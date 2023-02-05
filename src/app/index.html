@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- css -->
+    <!-- slickcss -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
-    <!-- js -->
+    <!-- slickjs -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="index.js"></script>
+    <link rel="stylesheet" href="dist/css/lightbox.css">
+
     <link rel="stylesheet" href="../app/page.module.css">
     <link rel="stylesheet" href="../../dist/output.css">
     <title>Document</title>
@@ -90,8 +91,8 @@
             </section>
         </div>
 
-        <section id="origin" class="rounded-xl border-t sm:h-[850px] md:h-[1000px]">
-            <div class="container bg-gray-400 pb-20 pt-10 my-10 h-[750px] md:h-[850px] lg:h-[700px] rounded-lg">
+        <section id="origin" class="rounded-xl border-t border-gray-200 h-[1200px] sm:h-[850px] md:h-[1220px] lg:h-[800px]">
+            <div class="container pb-20 pt-10 my-10 h-[1140px] sm:h-[750px] md:h-[1160px] lg:h-[700px] rounded-lg border">
                 <h2 class="title mb-10">出身地</h2>
                 <div class="flex flex-col lg:flex-row-reverse justify-around basis-1/2">
 
@@ -102,20 +103,29 @@
                                 <Image class="" src="../../public/gunma.jpg" alt="" />
                             </li>
                             <li class="">
-                                <p class="text-center text-2xl">群馬県</p>
+                                <p class="text-center text-2xl">丸沼高原スキー場</p>
+                                <Image class="" src="../../public//marunuma.jpg" alt="" />
+                            </li>
+                            <li class="">
+                                <p class="text-center text-2xl">尾瀬</p>
                                 <Image class="" src="../../public//oze.jpg" alt="" />
                             </li>
                             <li class="">
-                                <p class="text-center text-2xl">群馬県</p>
+                                <p class="text-center text-2xl">草津温泉</p>
                                 <Image class="m-auto" src="../../public//kusatsu.jpg" alt="" />
                             </li>
                         </ul>
                     </div>
-                    <div class="ml-6">
-                        <p class="">出身地は群馬県北部の片品村です</p>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi dicta facere ipsa at optio
-                            ullam praesentium officia magnam mollitia, magni distinctio vitae cupiditate nulla,
-                            dignissimos nisi quasi eos vero ratione.</p>
+                    <div class="lg:ml-6 lg:mt-24 basis-1/2 w-[95%] mx-auto">
+                        <p class="text-center text-xl py-5 bg-[#f9f8f5]">出身地は群馬県北部の片品村です</p>
+                        <p class="menu js-menu">片品村ってどんなところ？</p>
+                        <div class="answer">自然豊かで尾瀬やスキー場が有名だよ。</div>
+                        <p class="menu js-menu">尾瀬って何？</p>
+                        <div class="answer">福島・群馬・新潟の3県にまたがり、貴重な自然を守るべく、国立公園に指定されているよ。</div>
+                        <p class="menu js-menu">群馬ってどんなところ？</p>
+                        <div class="answer">群馬県は南部に平坦地が広がり、北部や西部は山地が多くを占める内陸県で、面積は6,362㎢、大きさは全国で21番目、関東地方では栃木県に次ぎ２番目だよ。</div>
+                        <p class="menu js-menu">群馬って何が有名なの？</p>
+                        <div class="answer">草津温泉や伊香保温泉などやこんにゃくが有名だよ。</div>
                     </div>
                 </div>
             </div>
@@ -127,7 +137,7 @@
                     <img src="/public/pc.jpg" alt="" class='rounded w-[640px]' />
                 </div>
                 <div class='lg:pl-12 lg:py-6 lg:w-1/2 w-full'>
-                    <h1 class='text-2xl sm:text-3xl font-medium text-gray-900 mb-10 text-center lg:text-left'> My Skills
+                    <h1 class='text-2xl sm:text-3xl font-medium text-gray-900 mb-10 text-center lg:text-left'> スキル
                     </h1>
                     <div class='w-full'>
                         <h2>HTML</h2>
@@ -165,7 +175,7 @@
             </div>
         </section>
 
-        <section id="love_artist" class="h-[1200px] bg-white border-t border-gray-20 mt-8">
+        <section id="love_artist" class="h-[1200px] bg-white border-t border-gray-200 mt-8">
             <h2 class="text-4xl bg-white text-center pb-10 pt-10 my-5">好きなアーティスト</h2>
 
             <div class="xl:Lisa bg-[url('/public/LiSAsm.jpg')] lg:bg-[top 50px right 120px] bg-fix">
@@ -175,24 +185,185 @@
             <div class="claris bg-fix"></div>
         </section>
 
-        <section id="love_anime" class="h-[700px] container">
-            <h2 class="text-4xl text-center">好きなアニメ</h2>
-            <ul class="flex justify-around">
-                <li><button>ロボット</button></li>
-            <li><button>アクション</button></li>
-            <li><button>コメディ</button></li>
-            <li><button>恋愛</button></li>
-            <li><button>日常</button></li>
-            <li><button>スポーツ</button></li>
-        </ul>
+        <section id="love_anime" class="xl:h-[950px] lg:h-[100%] h-[70%] container border-t border-gray-200">
+            <h2 class="text-4xl text-center mt-24 mb-10">好きなアニメ</h2>
+            <p class="text-center text-2xl my-6">ジャンル</p>
+            <div class=" overflo-x-auto">
+                <ul class="genreSelect">
+                    <li><button class="genre">アクション</button></li>
+                    <li><button class="genre">感動系</button></li>
+                    <li><button class="genre">コメディ</button></li>
+                    <li><button class="genre">恋愛</button></li>
+                    <li><button class="genre">日常</button></li>
+                    <li><button class="genre">ロボット</button></li>
+                    <li><button class="genre">スポーツ</button></li>
+                    <li><button class="genre">その他</button></li>
+                </ul>
+            </div>
+            <div>
+                <!-- モーダルウィンドウ -->
+                <ul class="anime_scroll anime_action">
+                    <li class="genre_action">
+                        <a href="/public/action/sao.png" data-lightbox="action-1"
+                            data-title="あらすじ</br>
+                        2022年。人類はついに完全なる仮想空間を実現した。VRMMORPG(仮想大規模オンラインロールプレイングゲーム)｢ソードアート・オンライン｣のプレイヤーの一人であるキリト。SAOの世界を満喫していた彼は、ログインした他の1万人のプレイヤーと共にゲームマスターから恐るべき託宣を聞かされる。それは、ゲームをクリアすることだけが、この世界から脱出する唯一の方法であること。そして、このゲーム内でゲームオーバーは、現実世界での“死”を意味すること。それが、このゲームの恐るべき全貌であった。キリトは、いち早くこのMMOの“真実”を受け入れ、パーティーを組まないソロプレイヤーとして、終わりの見えない死闘に身を投じていく……。"
+                            data-alt=""><img src="/public/action/sao.png" alt=""></a>
+                        <h2>ソードアート・オンライン</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/action/fate.png" data-lightbox="action-2"
+                            data-title="あらすじ</br>
+                            舞台は海と山に囲まれた都市・冬木市。そこで行われる、ある一つの儀式。手にした者の願いを叶えるという聖杯を実現させる為、聖杯に選ばれた七人の魔術師に、聖杯が選んだ七騎の使い魔を与える。　　騎士“セイバー”　　槍兵“ランサー”　　弓兵“アーチャー”　　騎兵“ライダー”　　魔術師 “キャスター”　　暗殺者 “アサシン”　　狂戦士 “バーサーカー”　　マスターは七つの役割を被った使い魔一人と契約し、七組は、聖杯を求め、最後の一組となるまで殺し合いを繰り広げる。その名は「聖杯戦争」。2014年 秋、開戦 ――。"
+                            data-alt=""><img src="/public/action/fate.png" alt=""></a>
+                        <h2>Fate/stay night</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/action/rettousei.png" data-lightbox="action-3"
+                            data-title="あらすじ</br>
+                            劣等生の兄と、優等生の妹。魔法科高校での波乱の日々が始まる―。魔法。それが伝説や御伽噺の産物ではなく、現実の技術となってから一世紀が経とうとしていた。そして、春。今年も新入生の季節が訪れた。国立魔法大学付属第一高校―通称『魔法科高校』は、成績が優秀な『一科生』と、その一科生の補欠『二科生』で構成され、彼らはそれぞれ『花冠』(ブルーム)、『雑草』(ウィード)と呼ばれていた。そんな魔法科高校に、一組の血の繋がった兄妹が入学する。兄は、ある欠陥を抱える劣等生(ウィード)。妹は、全てが完全無欠な優等生(ブルーム)。どこか達観したような面持ちを見せる劣等生の兄と、彼に肉親以上の想いを寄せる優等生の妹。二人がこのエリート校の門をくぐったときから、平穏だった学びの園で、波乱の日々が幕開いた。"
+                            data-alt=""><img src="/public/action/rettousei.png" alt=""></a>
+                        <h2>魔法科高校の劣等生</h2>
+                    </li>
+                </ul>
+                <!-- 感動系 -->
+                <ul class="anime_scroll anime_action hidden">
+                    <li class="genre_action">
+                        <a href="/public/impressed/angelbeats.png" data-lightbox="action-4" data-title="あらすじ"
+                            data-alt=""><img src="/public/impressed/angelbeats.png" alt=""></a>
+                        <h2>AngelBeats!</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/impressed/anohana.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/impressed/anohana.png" alt=""></a>
+                        <h2>あの日見た花の名前を僕達はまだ知らない。</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/impressed/charlotte.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/impressed/charlotte.png" alt=""></a>
+                        <h2>Charlotte</h2>
+                    </li>
+                </ul>
+                <!-- コメディ -->
+                <ul class="anime_scroll anime_action hidden">
+                    <li class="genre_action">
+                        <a href="/public/comedy/konosuba.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/comedy/konosuba.png" alt=""></a>
+                        <h2>この素晴らしい世界に祝福を！</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/comedy/bakatesu.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/comedy/bakatesu.png" alt=""></a>
+                        <h2>バカとテストと召喚獣</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/comedy/isekaiozisan.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/comedy/isekaiozisan.png" alt=""></a>
+                        <h2>異世界おじさん</h2>
+                    </li>
+                </ul>
+                <!-- 恋愛 -->
+                <ul class="anime_scroll anime_action hidden">
+                    <li class="genre_action">
+                        <a href="/public/love/oregairu.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/love/oregairu.png" alt=""></a>
+                        <h2>やはり俺の青春ラブコメはまちがっている。</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/love/datealive.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/love/datealive.png" alt=""></a>
+                        <h2>デート・ア・ライブ</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/love/is.png" data-lightbox="action-3" data-title="あらすじ</br>" data-alt=""><img
+                                src="/public/love/is.png" alt=""></a>
+                        <h2>IS<インフィニット・ストラトス>
+                        </h2>
+                    </li>
+                </ul>
+                <!-- 日常 -->
+                <ul class="anime_scroll anime_action hidden">
+                    <li class="genre_action">
+                        <a href="/public/life/spyfamily.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/life/spyfamily.png" alt=""></a>
+                        <h2>SPY×FAMILY</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/life/nichijou.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/life/nichijou.png" alt=""></a>
+                        <h2>日常</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/life/bozaro.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/life/bozaro.png" alt=""></a>
+                        <h2>ぼっち・ざ・ろっく！</h2>
+                    </li>
+                </ul>
+                <!-- ロボット -->
+                <ul class="anime_scroll anime_action hidden">
+                    <li class="genre_action">
+                        <a href="/public/robot/gurenragan.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/robot/gurenragan.png" alt=""></a>
+                        <h2>天元突破グレンラガン</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/robot/eureka.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/robot/eureka.png" alt=""></a>
+                        <h2>交響詩篇エウレカセブン</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/robot/darifura.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/robot/darifura.png" alt=""></a>
+                        <h2>ダーリン・イン・ザ・フランキス</h2>
+                    </li>
+                </ul>
+                <!-- スポーツ -->
+                <ul class="anime_scroll anime_action hidden">
+                    <li class="genre_action">
+                        <a href="/public/sports/major.jpg" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/sports/major.jpg" alt=""></a>
+                        <h2>メジャー</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/sports/giantkiling.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/sports/giantkiling.png" alt=""></a>
+                        <h2>ＧＩＡＮＴ ＫＩＬＬＩＮＧ</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/sports/saki.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/sports/saki.png" alt=""></a>
+                        <h2>咲-Saki-</h2>
+                    </li>
+                </ul>
+                <!-- その他 -->
+                <ul class="anime_scroll anime_action hidden">
+                    <li class="genre_action">
+                        <a href="/public/others/steinsgate.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/others/steinsgate.png" alt=""></a>
+                        <h2>STEINS;GATE</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/others/madomagi.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/others/madomagi.png" alt=""></a>
+                        <h2>魔法少女まどか☆マギカ</h2>
+                    </li>
+                    <li class="genre_action">
+                        <a href="/public/others/codegeass.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                            data-alt=""><img src="/public/others/codegeass.png" alt=""></a>
+                        <h2>コードギアス 反逆のルルーシュ</h2>
+                    </li>
+                </ul>
+            </div>
         </section>
 
-        <section id="future">
-            <h2 class="text-4xl text-center">今後</h2>
-            <p></p>
+        <section id="future" class="border-t mt-16 border-gray-200">
+            <div class="container md:py-24 py-10">
+                <h2 class="text-4xl text-center">今後</h2>
+                <p></p>
+            </div>
         </section>
 
     </main>
+    <script src="dist/js/lightbox.min.js"></script>
     <script src="index.js"></script>
 </body>
 

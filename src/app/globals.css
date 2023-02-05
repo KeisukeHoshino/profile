@@ -9,8 +9,10 @@
 }
 
 @layer components {
+    /*------------------------------------------------------------------------------
+fvのアクション
+-------------------------------------------------------------------------------*/
     /*
-//fvのアクション
     .start {
 	background: #FFF;
 	position: fixed;
@@ -30,6 +32,9 @@
 	width: 280px;
 }
 */
+    /*---------------------------------------------------------------------------
+ナビゲーションstart
+--------------------------------------------------------------------------------*/
     .navList {
         @apply hover:bg-sky-50 hover:ease-in duration-200 rounded-2xl h-16 w-32;
     }
@@ -38,24 +43,60 @@
     }
 
     .title {
-        @apply text-4xl text-center mb-20;
+        @apply text-4xl text-center mb-20 font-semibold;
     }
 
     .profilelist {
         @apply mt-4 md:mt-0 mb-4 pb-2 border-dashed  border-orange-200 border-b-4 text-gray-900;
     }
-    .main {
-        @apply bg-[url('/public/sora.jpg')] bg-contain bg-no-repeat bg-[center_top];
-    }
-
+    /*---------------------------------------------------------------------------
+ナビゲーションend
+bodyの背景start
+--------------------------------------------------------------------------------*/
     .kinako {
         @apply bg-[url('/public/kinako.png')] bg-no-repeat bg-[right_-15rem_top_5rem] bg-[length:750px_600px];
     }
+    /*--------------------------------------------------------------------------
+bodyの背景end
+出身地start
+-------------------------------------------------------------------------------*/
+    .menu {
+        border: 1px solid #e9e9e9;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+    }
+    .menu:hover,
+    .menu:active,
+    .menu.is-active {
+        color: #8b7246;
+    }
+    .answer {
+        border: 1px solid #e9e9e9;
+        text-align: center;
+        line-height: 0;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition-duration: 1s;
+    }
 
+    .answer.is-open {
+        background-color:#e9e9e9;
+        border: 1px solid #e9e9e9;
+        padding: 10px;
+        line-height: normal;
+        height: auto;
+        opacity: 1;
+    }
+
+    /*--------------------------------------------------------------------------
+出身地end
+アーティストstart
+-------------------------------------------------------------------------------*/
     .bg-fix {
-        height: 300px;
-        overflow: auto;
-        background: #eee none no-repeat center 0 / cover fixed;
+        @apply h-[314px] sm:h-[300px] w-full overflow-auto sm:bg-cover sm:bg-[center_top_60px] bg-no-repeat sm:bg-fixed bg-center bg-[length:630px_auto];
     }
     .Lisa {
         @apply bg-[top_20px_right] bg-cover bg-fixed bg-[url('/public/LiSA.jpg')];
@@ -66,7 +107,10 @@
     .claris {
         background-image: url("/public/Claris.jpg");
     }
-
+    /*---------------------------------------------------------------------------
+アーティストend
+スキルstart
+--------------------------------------------------------------------------------*/
     #skill {
         opacity: 0;
         transform: translate(0, 100px);
@@ -96,13 +140,74 @@
         to {
             --tw-bg-opacity: 1;
             background-color: rgb(22 163 74 / var(--tw-bg-opacity));
-
         }
     }
+    /*---------------------------------------------------------------------------
+スキルend
+アニメstart
+-------------------------------------------------------------------------------*/
+    .genreSelect {
+        @apply lg:w-[80%] w-[80%] m-auto flex justify-start lg:justify-around overflow-scroll overflow-y-hidden whitespace-nowrap;
+    }
+    .genre {
+        @apply bg-sky-200 mr-2 rounded-lg px-3 py-1 inline-block mb-4;
+    }
+    .genreSelect::-webkit-scrollbar {
+        @apply h-2 sm:h-0;
+    }
+
+    .genreSelect::-webkit-scrollbar-thumb {
+        background: #d2b48c;
+        border-radius: 7px;
+    }
+
+    .genreSelect::-webkit-scrollbar-track {
+        background: #f5deb3;
+        border-radius: 7px;
+    }
+
+    .anime_scroll {
+        display: flex;
+        margin: auto;
+        overflow-x: auto;
+    }
+
+    .anime_scroll li {
+        @apply p-2 m-1 flex-shrink-0 w-[90%] sm:w-[70%];
+        /* 各リストのスタイル */
+    }
+
+    .anime_scroll img {
+        /* 画像のスタイル */
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .anime_scroll::-webkit-scrollbar {
+        height: 12px; /* スクロールバーの高さ */
+    }
+
+    .anime_scroll::-webkit-scrollbar-thumb {
+        background: #aaa; /* ツマミの色 */
+        border-radius: 6px; /* ツマミ両端の丸み */
+    }
+
+    .anime_scroll::-webkit-scrollbar-track {
+        background: #ddd; /* トラックの色 */
+        border-radius: 6px; /* トラック両端の丸み */
+    }
+    .lb-data .lb-caption {
+        @apply text-base;
+    }
+
+    /*---------------------------------------------------------------------------
+アニメend
+共通設定start
+-------------------------------------------------------------------------------*/
     body {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Yu Gothic Medium", "游ゴシック Medium", sans-serif;
         line-height: 1.6;
-        color: #000;
+        color: #111;
         margin: 0;
         padding: 0;
     }
@@ -124,9 +229,10 @@
         padding: 0;
         list-style-type: none;
     }
-    /*-------------------------------------------------------------------------
+    /*--------------------------------------------------------------------------
+共通設定end
 スライダーstart
---------------------------------------------------------------------------*/
+-------------------------------------------------------------------------------*/
     .slide-items {
         @apply w-[90%] h-[90%] m-auto;
     }
@@ -136,7 +242,6 @@
         top: 50px;
     }
     .slide-arrow {
-        background-color: #333;
         bottom: 0;
         height: 0;
         margin: auto;
@@ -145,17 +250,17 @@
         width: 0;
     }
     .prev-arrow {
-        border-bottom: 15px solid rgb(253 242 248);
+        border-bottom: 15px solid #fff;
         border-left: 0;
         border-right: 15px solid #000;
-        border-top: 15px solid rgb(253 242 248);
+        border-top: 15px solid #fff;
         left: -25px;
     }
     .next-arrow {
-        border-bottom: 15px solid rgb(253 242 248);
+        border-bottom: 15px solid #fff;
         border-left: 15px solid #000;
         border-right: 0;
-        border-top: 15px solid rgb(253 242 248);
+        border-top: 15px solid #fff;
         right: -25px;
     }
     button {
@@ -171,5 +276,5 @@
     }
     /*-------------------------------------------------------------------------
 スライダーend
---------------------------------------------------------------------------*/
+------------------------------------------------------------------------------*/
 }

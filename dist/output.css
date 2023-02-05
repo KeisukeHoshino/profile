@@ -549,8 +549,11 @@ video {
   }
 }
 
+/*------------------------------------------------------------------------------
+fvのアクション
+-------------------------------------------------------------------------------*/
+
 /*
-//fvのアクション
     .start {
 	background: #FFF;
 	position: fixed;
@@ -570,6 +573,10 @@ video {
 	width: 280px;
 }
 */
+
+/*---------------------------------------------------------------------------
+ナビゲーションstart
+--------------------------------------------------------------------------------*/
 
 .navList {
   height: 4rem;
@@ -596,6 +603,7 @@ video {
   text-align: center;
   font-size: 2.25rem;
   line-height: 2.5rem;
+  font-weight: 600;
 }
 
 .profilelist {
@@ -616,12 +624,10 @@ video {
   }
 }
 
-.main {
-  background-image: url('/public/sora.jpg');
-  background-size: contain;
-  background-position: center top;
-  background-repeat: no-repeat;
-}
+/*---------------------------------------------------------------------------
+ナビゲーションend
+bodyの背景start
+--------------------------------------------------------------------------------*/
 
 .kinako {
   background-image: url('/public/kinako.png');
@@ -630,10 +636,67 @@ video {
   background-repeat: no-repeat;
 }
 
+/*--------------------------------------------------------------------------
+bodyの背景end
+出身地start
+-------------------------------------------------------------------------------*/
+
+.menu {
+  border: 1px solid #e9e9e9;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.menu:hover,
+    .menu:active,
+    .menu.is-active {
+  color: #8b7246;
+}
+
+.answer {
+  border: 1px solid #e9e9e9;
+  text-align: center;
+  line-height: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition-duration: 1s;
+}
+
+.answer.is-open {
+  background-color:#e9e9e9;
+  border: 1px solid #e9e9e9;
+  padding: 10px;
+  line-height: normal;
+  height: auto;
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------------------
+出身地end
+アーティストstart
+-------------------------------------------------------------------------------*/
+
 .bg-fix {
-  height: 300px;
+  height: 314px;
+  width: 100%;
   overflow: auto;
-  background: #eee none no-repeat center 0 / cover fixed;
+  background-size: 630px auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 640px) {
+  .bg-fix {
+    height: 300px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center top 60px;
+  }
 }
 
 .radwimps {
@@ -643,6 +706,11 @@ video {
 .claris {
   background-image: url("/public/Claris.jpg");
 }
+
+/*---------------------------------------------------------------------------
+アーティストend
+スキルstart
+--------------------------------------------------------------------------------*/
 
 #skill {
   opacity: 0;
@@ -682,10 +750,124 @@ video {
   }
 }
 
+/*---------------------------------------------------------------------------
+スキルend
+アニメstart
+-------------------------------------------------------------------------------*/
+
+.genreSelect {
+  margin: auto;
+  display: flex;
+  width: 80%;
+  justify-content: flex-start;
+  overflow: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .genreSelect {
+    width: 80%;
+    justify-content: space-around;
+  }
+}
+
+.genre {
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(186 230 253 / var(--tw-bg-opacity));
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.genreSelect::-webkit-scrollbar {
+  height: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .genreSelect::-webkit-scrollbar {
+    height: 0px;
+  }
+}
+
+.genreSelect::-webkit-scrollbar-thumb {
+  background: #d2b48c;
+  border-radius: 7px;
+}
+
+.genreSelect::-webkit-scrollbar-track {
+  background: #f5deb3;
+  border-radius: 7px;
+}
+
+.anime_scroll {
+  display: flex;
+  margin: auto;
+  overflow-x: auto;
+}
+
+.anime_scroll li {
+  margin: 0.25rem;
+  width: 90%;
+  flex-shrink: 0;
+  padding: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .anime_scroll li {
+    width: 70%;
+  }
+}
+
+.anime_scroll li {
+  /* 各リストのスタイル */
+}
+
+.anime_scroll img {
+  /* 画像のスタイル */
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.anime_scroll::-webkit-scrollbar {
+  height: 12px;
+  /* スクロールバーの高さ */
+}
+
+.anime_scroll::-webkit-scrollbar-thumb {
+  background: #aaa;
+  /* ツマミの色 */
+  border-radius: 6px;
+  /* ツマミ両端の丸み */
+}
+
+.anime_scroll::-webkit-scrollbar-track {
+  background: #ddd;
+  /* トラックの色 */
+  border-radius: 6px;
+  /* トラック両端の丸み */
+}
+
+.lb-data .lb-caption {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/*---------------------------------------------------------------------------
+アニメend
+共通設定start
+-------------------------------------------------------------------------------*/
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", sans-serif;
   line-height: 1.6;
-  color: #000;
+  color: #111;
   margin: 0;
   padding: 0;
 }
@@ -708,9 +890,10 @@ ul {
   list-style-type: none;
 }
 
-/*-------------------------------------------------------------------------
+/*--------------------------------------------------------------------------
+共通設定end
 スライダーstart
---------------------------------------------------------------------------*/
+-------------------------------------------------------------------------------*/
 
 .slide-items {
   margin: auto;
@@ -719,7 +902,6 @@ ul {
 }
 
 .slide-arrow {
-  background-color: #333;
   bottom: 0;
   height: 0;
   margin: auto;
@@ -729,18 +911,18 @@ ul {
 }
 
 .prev-arrow {
-  border-bottom: 15px solid rgb(253 242 248);
+  border-bottom: 15px solid #fff;
   border-left: 0;
   border-right: 15px solid #000;
-  border-top: 15px solid rgb(253 242 248);
+  border-top: 15px solid #fff;
   left: -25px;
 }
 
 .next-arrow {
-  border-bottom: 15px solid rgb(253 242 248);
+  border-bottom: 15px solid #fff;
   border-left: 15px solid #000;
   border-right: 0;
-  border-top: 15px solid rgb(253 242 248);
+  border-top: 15px solid #fff;
   right: -25px;
 }
 
@@ -780,14 +962,14 @@ button {
 
 /*-------------------------------------------------------------------------
 スライダーend
---------------------------------------------------------------------------*/
+------------------------------------------------------------------------------*/
 
 .visible {
   visibility: visible;
 }
 
-.\!visible {
-  visibility: visible !important;
+.collapse {
+  visibility: collapse;
 }
 
 .static {
@@ -822,24 +1004,24 @@ button {
   margin: 1.25rem;
 }
 
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
 
-.my-3 {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+}
+
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .ml-\[4\%\] {
@@ -858,6 +1040,14 @@ button {
   margin-top: 0.5rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-24 {
+  margin-top: 6rem;
+}
+
 .mt-28 {
   margin-top: 7rem;
 }
@@ -870,32 +1060,12 @@ button {
   margin-left: 5rem;
 }
 
-.mt-24 {
-  margin-top: 6rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
-.ml-5 {
-  margin-left: 1.25rem;
-}
-
-.ml-6 {
-  margin-left: 1.5rem;
-}
-
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .block {
   display: block;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .inline {
@@ -906,12 +1076,28 @@ button {
   display: flex;
 }
 
+.table {
+  display: table;
+}
+
+.table-caption {
+  display: table-caption;
+}
+
+.table-cell {
+  display: table-cell;
+}
+
 .contents {
   display: contents;
 }
 
 .hidden {
   display: none;
+}
+
+.\!hidden {
+  display: none !important;
 }
 
 .h-12 {
@@ -934,20 +1120,40 @@ button {
   height: 1200px;
 }
 
-.h-\[700px\] {
-  height: 700px;
+.h-\[70\%\] {
+  height: 70%;
+}
+
+.h-2 {
+  height: 0.5rem;
+}
+
+.h-\[1000px\] {
+  height: 1000px;
+}
+
+.h-\[1100px\] {
+  height: 1100px;
+}
+
+.h-\[1140px\] {
+  height: 1140px;
 }
 
 .w-full {
   width: 100%;
 }
 
-.w-\[600px\] {
-  width: 600px;
+.w-\[90\%\] {
+  width: 90%;
 }
 
 .w-\[100\%\] {
   width: 100%;
+}
+
+.w-\[95\%\] {
+  width: 95%;
 }
 
 .w-\[640px\] {
@@ -970,28 +1176,8 @@ button {
   width: 20%;
 }
 
-.w-\[00px\] {
-  width: 00px;
-}
-
-.w-\[500px\] {
-  width: 500px;
-}
-
-.w-\[100\] {
-  width: 100;
-}
-
-.w-\[90\%\] {
-  width: 90%;
-}
-
 .basis-1\/2 {
   flex-basis: 50%;
-}
-
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .resize {
@@ -1022,6 +1208,12 @@ button {
   justify-content: space-around;
 }
 
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .rounded-2xl {
   border-radius: 1rem;
 }
@@ -1036,6 +1228,10 @@ button {
 
 .rounded {
   border-radius: 0.25rem;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-t {
@@ -1057,9 +1253,9 @@ button {
   background-color: rgb(125 211 252 / var(--tw-bg-opacity));
 }
 
-.bg-gray-400 {
+.bg-\[\#f9f8f5\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+  background-color: rgb(249 248 245 / var(--tw-bg-opacity));
 }
 
 .bg-green-100 {
@@ -1086,20 +1282,12 @@ button {
   background-image: url('/public/LiSAsm.jpg');
 }
 
-.p-16 {
-  padding: 4rem;
+.p-4 {
+  padding: 1rem;
 }
 
 .p-12 {
   padding: 3rem;
-}
-
-.p-8 {
-  padding: 2rem;
-}
-
-.p-4 {
-  padding: 1rem;
 }
 
 .px-2 {
@@ -1112,6 +1300,11 @@ button {
   padding-bottom: 0.5rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -1120,6 +1313,11 @@ button {
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .pb-20 {
@@ -1152,6 +1350,11 @@ button {
   line-height: 2rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -1159,6 +1362,14 @@ button {
 
 .font-medium {
   font-weight: 500;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
 }
 
 .leading-loose {
@@ -1189,21 +1400,32 @@ button {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.blur {
+  --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .drop-shadow-md {
   --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.invert {
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.\!invert {
+  --tw-invert: invert(100%) !important;
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
 
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.transition {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+.\!filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
 
 @media (min-width: 1536px) {
@@ -1217,16 +1439,8 @@ button {
     height: 850px;
   }
 
-  .sm\:w-\[650px\] {
-    width: 650px;
-  }
-
-  .sm\:w-\[90\] {
-    width: 90;
-  }
-
-  .sm\:w-\[90\$\] {
-    width: 90$;
+  .sm\:h-\[750px\] {
+    height: 750px;
   }
 
   .sm\:w-\[90\%\] {
@@ -1256,34 +1470,51 @@ button {
     height: 4rem;
   }
 
-  .md\:h-\[1000px\] {
-    height: 1000px;
+  .md\:h-\[1220px\] {
+    height: 1220px;
   }
 
-  .md\:h-\[850px\] {
-    height: 850px;
-  }
-
-  .md\:w-\[700px\] {
-    width: 700px;
+  .md\:h-\[1160px\] {
+    height: 1160px;
   }
 
   .md\:w-\[800px\] {
     width: 800px;
   }
+
+  .md\:py-24 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
 }
 
 @media (min-width: 1024px) {
-  .lg\:mb-0 {
-    margin-bottom: 0px;
-  }
-
   .lg\:mt-6 {
     margin-top: 1.5rem;
   }
 
+  .lg\:ml-6 {
+    margin-left: 1.5rem;
+  }
+
+  .lg\:mt-24 {
+    margin-top: 6rem;
+  }
+
+  .lg\:mb-0 {
+    margin-bottom: 0px;
+  }
+
+  .lg\:h-\[800px\] {
+    height: 800px;
+  }
+
   .lg\:h-\[700px\] {
     height: 700px;
+  }
+
+  .lg\:h-\[100\%\] {
+    height: 100%;
   }
 
   .lg\:w-\[600px\] {
@@ -1327,5 +1558,9 @@ button {
 
   .xl\:mr-\[2\%\] {
     margin-right: 2%;
+  }
+
+  .xl\:h-\[950px\] {
+    height: 950px;
   }
 }
