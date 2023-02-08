@@ -1,4 +1,32 @@
 /**
+ * ハンバーガーメニュー
+ */
+(function ($) {
+    var $body = $("body");
+    var $btn = $(".toggle_btn");
+    var $navlist = $(".navA");
+    var $mask = $("#mask");
+    var open = "open";
+    $btn.on("click", function () {
+        if (!$body.hasClass(open)) {
+            $body.addClass(open);
+        } else {
+            $body.removeClass(open);
+        }
+    });
+    $navlist.on("click", function () {
+    console.log($navlist);
+        if ($body.hasClass(open)) {
+            $body.removeClass(open);
+        }
+    });
+    // mask close
+    $mask.on("click", function () {
+        $body.removeClass(open);
+    });
+})(jQuery);
+
+/**
  * スライダー
  */
 $(".slide-items").slick({
@@ -29,7 +57,7 @@ $(function () {
 /**
  * firstViewのアクション
  */
-//
+
 // $(function () {
 //     setTimeout(function () {
 //         $('.start p').fadeIn(1600);
@@ -93,14 +121,12 @@ window.addEventListener("load", () => {
 /**
  * 出身地のアコーディオン
  */
-const menu = document.querySelectorAll(".js-menu");
-
-function toggle() {
-    const content = this.nextElementSibling;
-    this.classList.toggle("is-active");
-    content.classList.toggle("is-open");
-}
-
-for (let i = 0; i < menu.length; i++) {
-    menu[i].addEventListener("click", toggle);
-}
+// .s_01 .accordion_one
+$(function () {
+    //.accordion_oneの中の.accordion_headerがクリックされたら
+    $(".accordion_header").click(function () {
+        //クリックされた.accordion_oneの中の.accordion_headerに隣接する.accordion_innerが開いたり閉じたりする。
+        $(this).next(".accordion_inner").slideToggle();
+        $(this).toggleClass("open");
+    });
+});

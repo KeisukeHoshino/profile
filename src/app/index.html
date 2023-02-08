@@ -14,57 +14,77 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" href="dist/css/lightbox.css">
 
-    <link rel="stylesheet" href="../app/page.module.css">
     <link rel="stylesheet" href="../../dist/output.css">
-    <title>Document</title>
+    <title>星野　圭助のプロフィール</title>
 </head>
 
 <body class="relative kinako">
     <div class="start">
         <p><img src="/public/Playlist_logo.png" alt=""></p>
     </div>
-    <header id="header"
-        class="flex items-center h-12 fixed top-0 w-full justify-between md:h-16 bg-sky-200 z-10 text-gray-700">
+    <header id="header" class="flex items-center fixed top-0 w-full justify-between h-16 bg-sky-200 z-10 text-gray-700">
         <h1 id="logo" class="block ml-[4%]">
             <a class="text-3xl px-2 bg-sky-300 rounded-2xl py-2 h-full" href="">
                 HOSHINO
             </a>
         </h1>
 
-        <nav class="h-full flex xl:mr-[2%]">
-            <ul class="flex h-full">
-                <li class="navList">
-                    <a class="navA" href="#profile">
-                        プロフィール
-                    </a>
-                </li>
-                <li class="navList">
-                    <a class="navA" href="#origin">
-                        出身地
-                    </a>
-                </li>
-                <li class="navList">
-                    <a class="navA" href="#love_artist">
-                        アーティスト
-                    </a>
-                </li>
-                <li class="navList">
-                    <a class="navA" href="#love_anime">
-                        おすすめアニメ
-                    </a>
-                </li>
-                <li class="navList">
-                    <a class="navA" href="#future">
-                        今後
-                    </a>
-                </li>
-            </ul>
-        </nav>
+        <div id="navArea">
+            <div class="toggle_btn lg:hidden" id="btn13">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav">
+
+                <div class="inner">
+                    <div class="bg-sky-200 h-16">
+                        <div class="toggle_btn lg:hidden text-slate-800" id="btn13">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <ul class="lg:flex h-full lg:bg-sky-200 m-0 p-0">
+                        <li class="navList">
+                            <a class="navA" href="#profile">
+                                プロフィール
+                            </a>
+                        </li>
+                        <li class="navList">
+                            <a class="navA" href="#origin">
+                                出身地
+                            </a>
+                        </li>
+                        <li class="navList">
+                            <a class="navA" href="#origin">
+                                スキル
+                            </a>
+                        </li>
+                        <li class="navList">
+                            <a class="navA" href="#love_artist">
+                                アーティスト
+                            </a>
+                        </li>
+                        <li class="navList">
+                            <a class="navA" href="#love_anime">
+                                アニメ
+                            </a>
+                        </li>
+                        <li class="navList">
+                            <a class="navA" href="#future">
+                                今後
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div id="mask"></div>
+        </div>
     </header>
 
 
     <main class="">
-
         <div class="container">
             <section id="profile" class="mt-16 mb-10 rounded-xl p-4 drop-shadow-md opacity-95 text-gray-900">
                 <h2 id="title_profile" class="title">
@@ -91,41 +111,67 @@
             </section>
         </div>
 
-        <section id="origin" class="rounded-xl border-t border-gray-200 h-[1200px] sm:h-[850px] md:h-[1220px] lg:h-[800px]">
-            <div class="container pb-20 pt-10 my-10 h-[1140px] sm:h-[750px] md:h-[1160px] lg:h-[700px] rounded-lg border">
-                <h2 class="title mb-10">出身地</h2>
+        <section id="origin" class="rounded-xl border-t border-gray-200 h-[1270px] md:h-[1330px] lg:h-[820px]">
+            <div class="container pt-8 my-10 h-[1220px] md:h-[1275px] lg:h-[760px] rounded-lg border">
+                <h2 class="title mb-8">出身地</h2>
                 <div class="flex flex-col lg:flex-row-reverse justify-around basis-1/2">
 
                     <div class="lg:w-[600px] basis-1/2 w-[100%] h-[100%]" aria-label="の基本的なHTML">
                         <ul class="slide-items rounded-lg">
                             <li class="">
-                                <p class="text-center text-2xl">群馬県片品村</p>
+                                <p class="text-center mb-2 text-2xl">群馬県</p>
                                 <Image class="" src="../../public/gunma.jpg" alt="" />
                             </li>
                             <li class="">
-                                <p class="text-center text-2xl">丸沼高原スキー場</p>
+                                <p class="text-center mb-2 text-2xl">丸沼高原スキー場</p>
                                 <Image class="" src="../../public//marunuma.jpg" alt="" />
                             </li>
                             <li class="">
-                                <p class="text-center text-2xl">尾瀬</p>
+                                <p class="text-center mb-2 text-2xl">尾瀬</p>
                                 <Image class="" src="../../public//oze.jpg" alt="" />
                             </li>
                             <li class="">
-                                <p class="text-center text-2xl">草津温泉</p>
+                                <p class="text-center mb-2 text-2xl">草津温泉</p>
                                 <Image class="m-auto" src="../../public//kusatsu.jpg" alt="" />
                             </li>
                         </ul>
                     </div>
-                    <div class="lg:ml-6 lg:mt-24 basis-1/2 w-[95%] mx-auto">
-                        <p class="text-center text-xl py-5 bg-[#f9f8f5]">出身地は群馬県北部の片品村です</p>
-                        <p class="menu js-menu">片品村ってどんなところ？</p>
-                        <div class="answer">自然豊かで尾瀬やスキー場が有名だよ。</div>
-                        <p class="menu js-menu">尾瀬って何？</p>
-                        <div class="answer">福島・群馬・新潟の3県にまたがり、貴重な自然を守るべく、国立公園に指定されているよ。</div>
-                        <p class="menu js-menu">群馬ってどんなところ？</p>
-                        <div class="answer">群馬県は南部に平坦地が広がり、北部や西部は山地が多くを占める内陸県で、面積は6,362㎢、大きさは全国で21番目、関東地方では栃木県に次ぎ２番目だよ。</div>
-                        <p class="menu js-menu">群馬って何が有名なの？</p>
-                        <div class="answer">草津温泉や伊香保温泉などやこんにゃくが有名だよ。</div>
+                    <div class="lg:ml-6 lg:mt-2 basis-1/2 w-[95%] mx-auto">
+                        <div class="text-center text-xl py-5 bg-[#f2f2f2]">出身地は群馬県北部の片品村です</div>
+                        <div class="accordion_header">片品村ってどんなところ？
+                            <div class="i_box"><i class="one_i"></i></div>
+                        </div>
+                        <div class="accordion_inner">
+                            <div class="box_one">
+                                <p class="answer">自然豊かで尾瀬やスキー場が有名だよ。</p>
+                            </div>
+                        </div>
+                        <div class="accordion_header">尾瀬って何？
+                            <div class="i_box"><i class="one_i"></i></div>
+                        </div>
+                        <div class="accordion_inner">
+                            <div class="box_one h-[70px]">
+                                <p class="answer">福島・群馬・新潟の3県にまたがり、貴重な自然を守るべく、国立公園に指定されているよ。</p>
+                            </div>
+                        </div>
+                        <div class="accordion_header">群馬ってどんなところ？
+                            <div class="i_box"><i class="one_i"></i></div>
+                        </div>
+                        <div class="accordion_inner">
+                            <div class="box_one h-[100px]">
+                                <p class="answer">
+                                    群馬県は南部に平坦地が広がり、北部や西部は山地が多くを占める内陸県で、面積は6,362㎢、大きさは全国で21番目、関東地方では栃木県に次ぎ２番目だよ。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="accordion_header">群馬って何が有名なの？
+                            <div class="i_box"><i class="one_i"></i></div>
+                        </div>
+                        <div class="accordion_inner">
+                            <div class="box_one">
+                                <p class="answer">草津温泉や伊香保温泉などやこんにゃくが有名だよ。</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -233,12 +279,12 @@
                         <h2>AngelBeats!</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/impressed/anohana.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/impressed/anohana.png" data-lightbox="action-5" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/impressed/anohana.png" alt=""></a>
                         <h2>あの日見た花の名前を僕達はまだ知らない。</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/impressed/charlotte.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/impressed/charlotte.png" data-lightbox="action-6" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/impressed/charlotte.png" alt=""></a>
                         <h2>Charlotte</h2>
                     </li>
@@ -246,17 +292,17 @@
                 <!-- コメディ -->
                 <ul class="anime_scroll anime_action hidden">
                     <li class="genre_action">
-                        <a href="/public/comedy/konosuba.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/comedy/konosuba.png" data-lightbox="action-7" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/comedy/konosuba.png" alt=""></a>
                         <h2>この素晴らしい世界に祝福を！</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/comedy/bakatesu.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/comedy/bakatesu.png" data-lightbox="action-8" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/comedy/bakatesu.png" alt=""></a>
                         <h2>バカとテストと召喚獣</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/comedy/isekaiozisan.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/comedy/isekaiozisan.png" data-lightbox="action-9" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/comedy/isekaiozisan.png" alt=""></a>
                         <h2>異世界おじさん</h2>
                     </li>
@@ -264,17 +310,17 @@
                 <!-- 恋愛 -->
                 <ul class="anime_scroll anime_action hidden">
                     <li class="genre_action">
-                        <a href="/public/love/oregairu.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/love/oregairu.png" data-lightbox="action-10" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/love/oregairu.png" alt=""></a>
                         <h2>やはり俺の青春ラブコメはまちがっている。</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/love/datealive.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/love/datealive.png" data-lightbox="action-11" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/love/datealive.png" alt=""></a>
                         <h2>デート・ア・ライブ</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/love/is.png" data-lightbox="action-3" data-title="あらすじ</br>" data-alt=""><img
+                        <a href="/public/love/is.png" data-lightbox="action-12" data-title="あらすじ</br>" data-alt=""><img
                                 src="/public/love/is.png" alt=""></a>
                         <h2>IS<インフィニット・ストラトス>
                         </h2>
@@ -283,17 +329,17 @@
                 <!-- 日常 -->
                 <ul class="anime_scroll anime_action hidden">
                     <li class="genre_action">
-                        <a href="/public/life/spyfamily.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/life/spyfamily.png" data-lightbox="action-13" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/life/spyfamily.png" alt=""></a>
                         <h2>SPY×FAMILY</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/life/nichijou.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/life/nichijou.png" data-lightbox="action-14" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/life/nichijou.png" alt=""></a>
                         <h2>日常</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/life/bozaro.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/life/bozaro.png" data-lightbox="action-15" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/life/bozaro.png" alt=""></a>
                         <h2>ぼっち・ざ・ろっく！</h2>
                     </li>
@@ -301,17 +347,17 @@
                 <!-- ロボット -->
                 <ul class="anime_scroll anime_action hidden">
                     <li class="genre_action">
-                        <a href="/public/robot/gurenragan.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/robot/gurenragan.png" data-lightbox="action-16" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/robot/gurenragan.png" alt=""></a>
                         <h2>天元突破グレンラガン</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/robot/eureka.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/robot/eureka.png" data-lightbox="action-17" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/robot/eureka.png" alt=""></a>
                         <h2>交響詩篇エウレカセブン</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/robot/darifura.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/robot/darifura.png" data-lightbox="action-18" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/robot/darifura.png" alt=""></a>
                         <h2>ダーリン・イン・ザ・フランキス</h2>
                     </li>
@@ -319,17 +365,17 @@
                 <!-- スポーツ -->
                 <ul class="anime_scroll anime_action hidden">
                     <li class="genre_action">
-                        <a href="/public/sports/major.jpg" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/sports/major.jpg" data-lightbox="action-19" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/sports/major.jpg" alt=""></a>
                         <h2>メジャー</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/sports/giantkiling.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/sports/giantkiling.png" data-lightbox="action-20" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/sports/giantkiling.png" alt=""></a>
                         <h2>ＧＩＡＮＴ ＫＩＬＬＩＮＧ</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/sports/saki.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/sports/saki.png" data-lightbox="action-21" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/sports/saki.png" alt=""></a>
                         <h2>咲-Saki-</h2>
                     </li>
@@ -337,17 +383,17 @@
                 <!-- その他 -->
                 <ul class="anime_scroll anime_action hidden">
                     <li class="genre_action">
-                        <a href="/public/others/steinsgate.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/others/steinsgate.png" data-lightbox="action-22" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/others/steinsgate.png" alt=""></a>
                         <h2>STEINS;GATE</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/others/madomagi.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/others/madomagi.png" data-lightbox="action-23" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/others/madomagi.png" alt=""></a>
                         <h2>魔法少女まどか☆マギカ</h2>
                     </li>
                     <li class="genre_action">
-                        <a href="/public/others/codegeass.png" data-lightbox="action-3" data-title="あらすじ</br>"
+                        <a href="/public/others/codegeass.png" data-lightbox="action-24" data-title="あらすじ</br>"
                             data-alt=""><img src="/public/others/codegeass.png" alt=""></a>
                         <h2>コードギアス 反逆のルルーシュ</h2>
                     </li>
@@ -357,7 +403,7 @@
 
         <section id="future" class="border-t mt-16 border-gray-200">
             <div class="container md:py-24 py-10">
-                <h2 class="text-4xl text-center">今後</h2>
+                <h2 class="text-4xl text-center h-[1000px]">今後</h2>
                 <p></p>
             </div>
         </section>

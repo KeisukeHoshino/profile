@@ -35,22 +35,162 @@ fvのアクション
     /*---------------------------------------------------------------------------
 ナビゲーションstart
 --------------------------------------------------------------------------------*/
+    nav {
+        @apply block fixed w-[220px] lg:w-[670px] md:w-[300px] top-0 right-[-220px] lg:right-0 md:right-[300px] bottom-0 lg:bottom-auto bg-white overflow-x-hidden overflow-y-auto transition-all duration-500 z-10 lg:opacity-100 opacity-0;
+        -webkit-overflow-scrolling: touch;
+    }
+    .open nav {
+        @apply right-0 opacity-100;
+    }
+    .inner {
+        @apply lg:p-0 pb-[25px] px-0;
+    }
     .navList {
-        @apply hover:bg-sky-50 hover:ease-in duration-200 rounded-2xl h-16 w-32;
+        @apply hover:bg-sky-50 hover:ease-in lg:rounded-2xl duration-300 h-16 w-full lg:w-32 border-b lg:border-b-0 border-slate-800 m-0 relative;
     }
     .navA {
-        @apply h-full flex items-center justify-center;
+        @apply h-full flex items-center lg:justify-center pl-2 text-sm;
     }
 
     .title {
-        @apply text-4xl text-center mb-20 font-semibold;
+        @apply text-4xl text-center mb-20;
     }
 
     .profilelist {
-        @apply mt-4 md:mt-0 mb-4 pb-2 border-dashed  border-orange-200 border-b-4 text-gray-900;
+        @apply mt-4 md:mt-0 mb-4 pb-2 border-dashed  border-orange-200 border-b-4 text-slate-900;
     }
+    /*============
+    .toggle_btn
+    =============*/
+    .toggle_btn {
+        display: block;
+        position: fixed;
+        top: 3px;
+        right: 30px;
+        width: 30px;
+        height: 30px;
+        transition: all 0.5s;
+        cursor: pointer;
+        z-index: 3;
+    }
+    .open .toggle_btn {
+        right: -10px;
+    }
+    .toggle_btn span {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: #333;
+        border-radius: 4px;
+        transition: all 0.5s;
+    }
+    .toggle_btn span:nth-child(1) {
+        top: 4px;
+    }
+    .toggle_btn span:nth-child(2) {
+        top: 14px;
+    }
+    .toggle_btn span:nth-child(3) {
+        bottom: 4px;
+    }
+    .open .toggle_btn span {
+        background-color: rgb(30 41 59 / var(--tw-text-opacity));
+    }
+    .open .toggle_btn {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    .open .toggle_btn span:nth-child(1),
+    .open .toggle_btn span:nth-child(3) {
+        width: 23px;
+    }
+    .open .toggle_btn span:nth-child(1) {
+        -webkit-transform: translate(-3px, 13px) rotate(-45deg);
+        transform: translate(-3px, 13px) rotate(-45deg);
+    }
+    .open .toggle_btn span:nth-child(3) {
+        -webkit-transform: translate(-3px, -13px) rotate(45deg);
+        transform: translate(-3px, -13px) rotate(45deg);
+    }
+    #mask {
+        display: none;
+        transition: all 0.5s;
+    }
+    .open #mask {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.8;
+        z-index: 2;
+        cursor: pointer;
+    }
+
     /*---------------------------------------------------------------------------
 ナビゲーションend
+ハンバーガーメニューstart
+--------------------------------------------------------------------------------*/
+
+    .toggle_btn,
+    .ham_toggle_btn {
+        position: relative;
+        width: 50px;
+        height: 44px;
+        cursor: pointer;
+    }
+    .toggle_btn span,
+    .ham_toggle_btn span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #fff;
+        border-radius: 4px;
+    }
+    .toggle_btn,
+    .ham_toggle_btn,
+    .toggle_btn span,
+    .ham_toggle_btn span {
+        display: inline-block;
+        transition: all 0.5s;
+        box-sizing: border-box;
+    }
+    .toggle_btn span:nth-of-type(1),
+    .ham_toggle_btn span:nth-of-type(1) {
+        top: 0;
+    }
+    .toggle_btn span:nth-of-type(2),
+    .ham_toggle_btn span:nth-of-type(2) {
+        top: 20px;
+    }
+    .toggle_btn span:nth-of-type(3),
+    .ham_toggle_btn span:nth-of-type(3) {
+        bottom: 0;
+    }
+    .toggle_btn.hambarger span:nth-of-type(1),
+    .toggle_btn.hambarger span:nth-of-type(3),
+    .ham_toggle_btn.hambarger span:nth-of-type(1),
+    .ham_toggle_btn.hambarger span:nth-of-type(3) {
+        width: 20px;
+    }
+    .toggle_btn.hambarger span:nth-of-type(1),
+    .toggle_btn.hambarger span:nth-of-type(1) {
+        -webkit-transform: translate(-1px, 13px) rotate(-45deg);
+        transform: translate(-1px, 13px) rotate(-45deg);
+    }
+    .toggle_btn.hambarger span:nth-of-type(3),
+    .ham_toggle_btn.hambarger span:nth-of-type(3) {
+        -webkit-transform: translate(-1px, -13px) rotate(45deg);
+        transform: translate(-1px, -13px) rotate(45deg);
+    }
+
+    /*---------------------------------------------------------------------------
+ハンバーガーメニューend
 bodyの背景start
 --------------------------------------------------------------------------------*/
     .kinako {
@@ -60,37 +200,53 @@ bodyの背景start
 bodyの背景end
 出身地start
 -------------------------------------------------------------------------------*/
-    .menu {
-        border: 1px solid #e9e9e9;
-        padding: 10px;
-        text-align: center;
-        cursor: pointer;
-        user-select: none;
-    }
-    .menu:hover,
-    .menu:active,
-    .menu.is-active {
-        color: #8b7246;
-    }
-    .answer {
-        border: 1px solid #e9e9e9;
-        text-align: center;
-        line-height: 0;
-        height: 0;
-        overflow: hidden;
-        opacity: 0;
-        transition-duration: 1s;
-    }
+/*--------------------------------------------------------------------------
+スライダーstart
+-------------------------------------------------------------------------------*/
+.slide-items {
+    @apply w-[90%] h-[90%] m-auto;
+}
 
-    .answer.is-open {
-        background-color:#e9e9e9;
-        border: 1px solid #e9e9e9;
-        padding: 10px;
-        line-height: normal;
-        height: auto;
-        opacity: 1;
-    }
+.slick-dots li button:before {
+    font-size: 50px;
+    top: 50px;
+}
+.slide-arrow {
+    bottom: 0;
+    height: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    width: 0;
+}
+.prev-arrow {
+    border-bottom: 15px solid #fff;
+    border-left: 0;
+    border-right: 15px solid #000;
+    border-top: 15px solid #fff;
+    left: -25px;
+}
+.next-arrow {
+    border-bottom: 15px solid #fff;
+    border-left: 15px solid #000;
+    border-right: 0;
+    border-top: 15px solid #fff;
+    right: -25px;
+}
+button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    padding: 0;
+}
 
+.slide-items img {
+    @apply w-full lg:h-[450px] h-[70vw] sm:h-[60vw] md:h-[45vw] sm:object-cover max-w-full;
+}
+/*-------------------------------------------------------------------------
+スライダーend
+------------------------------------------------------------------------------*/
     /*--------------------------------------------------------------------------
 出身地end
 アーティストstart
@@ -107,6 +263,118 @@ bodyの背景end
     .claris {
         background-image: url("/public/Claris.jpg");
     }
+
+    /*====================================================================
+アコーディオン
+====================================================================*/
+
+    .accordion_header {
+        padding: 20px 3%;
+        position: relative;
+        z-index: +1;
+        cursor: pointer;
+        transition-duration: 0.2s;
+        border-left: 2px solid #f2f2f2;
+        border-right: 2px solid #f2f2f2;
+        border-bottom: 2px solid #f2f2f2;
+        color: #8b7246;
+    }
+    .accordion_header:hover {
+        opacity: 0.8;
+        color: #8b7246;
+    }
+    .i_box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        width: 40px;
+        height: 40px;
+        border: 1px solid #fff;
+        margin-top: -20px;
+        box-sizing: border-box;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        transform-origin: center center;
+        transition-duration: 0.2s;
+    }
+    .i_box .one_i {
+        display: block;
+        width: 18px;
+        height: 18px;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+        transform-origin: center center;
+        transition-duration: 0.2s;
+        position: relative;
+    }
+    .accordion_header.open .i_box {
+        -webkit-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+    }
+    .accordion_header .i_box .one_i:before,
+    .accordion_header .i_box .one_i:after {
+        display: flex;
+        content: "";
+        background-color: #8b7246;
+        border-radius: 10px;
+        width: 18px;
+        height: 4px;
+        position: absolute;
+        top: 7px;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        transform-origin: center center;
+    }
+    .accordion_header .i_box .one_i:before {
+        width: 4px;
+        height: 18px;
+        top: 0;
+        left: 7px;
+    }
+    .accordion_header.open .i_box .one_i:before {
+        content: none;
+    }
+    .accordion_header.open .i_box .one_i:after {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+    .accordion_inner {
+        display: none;
+        border-left: 2px solid #f2f2f2;
+        border-right: 2px solid #f2f2f2;
+        border-bottom: 2px solid #f2f2f2;
+        box-sizing: border-box;
+    }
+    .box_one {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0 3%;
+    }
+    .answer {
+    }
+    @media screen and (max-width: 1024px) {
+        .accordion_header {
+            font-size: 18px;
+        }
+        .accordion_header .i_box {
+            width: 30px;
+            height: 30px;
+            margin-top: -15px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .accordion_header {
+            font-size: 16px;
+            text-align: left;
+            padding: 15px 60px 15px 15px;
+        }
+    }
+
     /*---------------------------------------------------------------------------
 アーティストend
 スキルstart
@@ -147,29 +415,62 @@ bodyの背景end
 アニメstart
 -------------------------------------------------------------------------------*/
     .genreSelect {
-        @apply lg:w-[80%] w-[80%] m-auto flex justify-start lg:justify-around overflow-scroll overflow-y-hidden whitespace-nowrap;
+        @apply lg:w-[85%] w-[90%] m-auto flex justify-start xl:justify-around overflow-scroll overflow-y-hidden whitespace-nowrap;
     }
     .genre {
-        @apply bg-sky-200 mr-2 rounded-lg px-3 py-1 inline-block mb-4;
+        @apply bg-sky-200 mb-4;
     }
     .genreSelect::-webkit-scrollbar {
-        @apply h-2 sm:h-0;
+        height: 4px; /* スクロールバーの高さ */
     }
-
-    .genreSelect::-webkit-scrollbar-thumb {
-        background: #d2b48c;
-        border-radius: 7px;
+    .genreSelect li {
+        @apply m-1 flex-shrink-0;
+        /* 各リストのスタイル */
     }
-
-    .genreSelect::-webkit-scrollbar-track {
-        background: #f5deb3;
-        border-radius: 7px;
+    .genre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 45px;
+        position: relative;
+        background: "rgb(186 230 253 / var(--tw-bg-opacity))";
+        border: 1px solid #228bc8;
+        border-radius: 30px;
+        box-sizing: border-box;
+        padding: 0 40px 0 20px;
+        color: #fff;
+        font-size: 16px;
+        letter-spacing: 0.1em;
+        line-height: 1.3;
+        text-align: left;
+        text-decoration: none;
+        transition-duration: 0.3s;
+    }
+    .genre:before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border: 0;
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
+        transform: rotate(45deg);
+        position: absolute;
+        top: 50%;
+        right: 25px;
+        margin-top: -6px;
+    }
+    .genre:hover {
+        background: #fff;
+        color: #228bc8;
+    }
+    .genre:hover:before {
+        border-top: 2px solid #228bc8;
+        border-right: 2px solid #228bc8;
     }
 
     .anime_scroll {
-        display: flex;
-        margin: auto;
-        overflow-x: auto;
+        @apply flex m-auto overflow-x-auto;
     }
 
     .anime_scroll li {
@@ -231,50 +532,6 @@ bodyの背景end
     }
     /*--------------------------------------------------------------------------
 共通設定end
-スライダーstart
 -------------------------------------------------------------------------------*/
-    .slide-items {
-        @apply w-[90%] h-[90%] m-auto;
-    }
 
-    .slick-dots li button:before {
-        font-size: 50px;
-        top: 50px;
-    }
-    .slide-arrow {
-        bottom: 0;
-        height: 0;
-        margin: auto;
-        position: absolute;
-        top: 0;
-        width: 0;
-    }
-    .prev-arrow {
-        border-bottom: 15px solid #fff;
-        border-left: 0;
-        border-right: 15px solid #000;
-        border-top: 15px solid #fff;
-        left: -25px;
-    }
-    .next-arrow {
-        border-bottom: 15px solid #fff;
-        border-left: 15px solid #000;
-        border-right: 0;
-        border-top: 15px solid #fff;
-        right: -25px;
-    }
-    button {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        outline: none;
-        padding: 0;
-    }
-
-    .slide-items img {
-        @apply w-full lg:h-[450px] h-[70vw] sm:h-[60vw] md:h-[50vw] sm:object-cover max-w-full;
-    }
-    /*-------------------------------------------------------------------------
-スライダーend
-------------------------------------------------------------------------------*/
 }
