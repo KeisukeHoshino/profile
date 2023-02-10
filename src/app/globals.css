@@ -12,7 +12,7 @@
     /*------------------------------------------------------------------------------
 fvのアクション
 -------------------------------------------------------------------------------*/
-    /*
+
     .start {
 	background: #FFF;
 	position: fixed;
@@ -31,12 +31,12 @@ fvのアクション
 	z-index: 9999;
 	width: 280px;
 }
-*/
+
     /*---------------------------------------------------------------------------
 ナビゲーションstart
 --------------------------------------------------------------------------------*/
     nav {
-        @apply block fixed w-[220px] lg:w-[670px] md:w-[300px] top-0 right-[-220px] lg:right-0 md:right-[300px] bottom-0 lg:bottom-auto bg-white overflow-x-hidden overflow-y-auto transition-all duration-500 z-10 lg:opacity-100 opacity-0;
+        @apply block fixed w-[220px] lg:w-[670px] md:w-[300px] top-0 right-[-220px] lg:right-0 md:right-[-300px] bottom-0 lg:bottom-auto bg-white overflow-x-hidden overflow-y-auto transition-all duration-500 z-10 lg:opacity-100 opacity-0;
         -webkit-overflow-scrolling: touch;
     }
     .open nav {
@@ -200,51 +200,51 @@ bodyの背景start
 bodyの背景end
 出身地start
 -------------------------------------------------------------------------------*/
-/*--------------------------------------------------------------------------
+    /*--------------------------------------------------------------------------
 スライダーstart
 -------------------------------------------------------------------------------*/
-.slide-items {
-    @apply w-[90%] h-[90%] m-auto;
-}
+    .slide-items {
+        @apply w-[90%] h-[90%] m-auto;
+    }
 
-.slick-dots li button:before {
-    font-size: 50px;
-    top: 50px;
-}
-.slide-arrow {
-    bottom: 0;
-    height: 0;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    width: 0;
-}
-.prev-arrow {
-    border-bottom: 15px solid #fff;
-    border-left: 0;
-    border-right: 15px solid #000;
-    border-top: 15px solid #fff;
-    left: -25px;
-}
-.next-arrow {
-    border-bottom: 15px solid #fff;
-    border-left: 15px solid #000;
-    border-right: 0;
-    border-top: 15px solid #fff;
-    right: -25px;
-}
-button {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    outline: none;
-    padding: 0;
-}
+    .slick-dots li button:before {
+        font-size: 50px;
+        top: 50px;
+    }
+    .slide-arrow {
+        bottom: 0;
+        height: 0;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        width: 0;
+    }
+    .prev-arrow {
+        border-bottom: 15px solid #fff;
+        border-left: 0;
+        border-right: 15px solid #000;
+        border-top: 15px solid #fff;
+        left: -25px;
+    }
+    .next-arrow {
+        border-bottom: 15px solid #fff;
+        border-left: 15px solid #000;
+        border-right: 0;
+        border-top: 15px solid #fff;
+        right: -25px;
+    }
+    button {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        outline: none;
+        padding: 0;
+    }
 
-.slide-items img {
-    @apply w-full lg:h-[450px] h-[70vw] sm:h-[60vw] md:h-[45vw] sm:object-cover max-w-full;
-}
-/*-------------------------------------------------------------------------
+    .slide-items img {
+        @apply w-full lg:h-[450px] h-[70vw] sm:h-[60vw] md:h-[45vw] sm:object-cover max-w-full;
+    }
+    /*-------------------------------------------------------------------------
 スライダーend
 ------------------------------------------------------------------------------*/
     /*--------------------------------------------------------------------------
@@ -503,6 +503,68 @@ button {
 
     /*---------------------------------------------------------------------------
 アニメend
+今後start
+-------------------------------------------------------------------------------*/
+
+    #skill {
+        opacity: 0;
+        transform: translate(0, 100px);
+        transition: all 1s;
+    }
+
+    .wrapper.fade {
+        display: flex;
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+    .wrapper {
+        @apply sm:px-20;
+        perspective: 100vmax;
+        /* others */
+        height:600px;
+        transition-duration: 400ms;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        opacity: 0;
+    }
+    .box {
+        @apply xl:w-[100px];
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        /* others */
+        opacity:0;
+        color: rgb(125 211 252);
+        font: 600 6rem/1 futura;
+        display: grid;
+        place-items: center;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background-color: #fff;
+        cursor: pointer;
+        object-fit: cover;
+        position: relative;
+        box-shadow: 8px 8px 12px 8px rgb(0 0 0 / 50%);
+    }
+    .box.box_action{
+        opacity:1;
+    }
+    .box.reverse {
+        transform: rotate3d(0.1, 1.5, 0.1, 180deg);
+        color: #fff;
+    }
+    .box::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: url(/public/box.png) no-repeat center/cover;
+        position: absolute;
+        inset: 0 auto auto 0;
+        transform: translate3d(0, 0, -8px);
+    } /*---------------------------------------------------------------------------
+今後end
 共通設定start
 -------------------------------------------------------------------------------*/
     body {
@@ -533,5 +595,4 @@ button {
     /*--------------------------------------------------------------------------
 共通設定end
 -------------------------------------------------------------------------------*/
-
 }

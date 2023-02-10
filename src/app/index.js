@@ -2,11 +2,11 @@
  * ハンバーガーメニュー
  */
 (function ($) {
-    var $body = $("body");
-    var $btn = $(".toggle_btn");
-    var $navlist = $(".navA");
-    var $mask = $("#mask");
-    var open = "open";
+    const $body = $("body");
+    const $btn = $(".toggle_btn");
+    const $navlist = $(".navA");
+    const $mask = $("#mask");
+    const open = "open";
     $btn.on("click", function () {
         if (!$body.hasClass(open)) {
             $body.addClass(open);
@@ -15,7 +15,6 @@
         }
     });
     $navlist.on("click", function () {
-    console.log($navlist);
         if ($body.hasClass(open)) {
             $body.removeClass(open);
         }
@@ -45,10 +44,10 @@ $(".slide-items").slick({
 $(function () {
     const headerHeight = $("header").outerHeight();
     $('a[href^="#"]').click(function () {
-        var speed = 500;
-        var href = $(this).attr("href");
-        var target = $(href == "#" || href == "" ? "html" : href);
-        var position = target.offset().top - headerHeight - 10;
+        const speed = 500;
+        const href = $(this).attr("href");
+        const target = $(href == "#" || href == "" ? "html" : href);
+        const position = target.offset().top - headerHeight - 10;
         $("html, body").animate({ scrollTop: position }, speed, "swing");
         return false;
     });
@@ -58,14 +57,14 @@ $(function () {
  * firstViewのアクション
  */
 
-// $(function () {
-//     setTimeout(function () {
-//         $('.start p').fadeIn(1600);
-//     }, 500); //0.5秒後にロゴをフェードイン!
-//     setTimeout(function () {
-//         $('.start').fadeOut(500);
-//     }, 2500); //2.5秒後にロゴ含め真っ白背景をフェードアウト！
-// });
+$(function () {
+    setTimeout(function () {
+        $('.start p').fadeIn(1600);
+    }, 500);
+    setTimeout(function () {
+        $('.start').fadeOut(500);
+    }, 2500);
+});
 
 /**
  * スキルのフェードイン
@@ -73,12 +72,20 @@ $(function () {
 $(function () {
     $(window).scroll(function () {
         $("#skill").each(function () {
-            let offset = $("#skill").offset().top;
+            let skill_offset = $("#skill").offset().top;
             let scroll = $(window).scrollTop();
-
-            if (scroll > offset - 700) {
+            if (scroll > skill_offset - 700) {
                 $("#skill").addClass("active");
                 $(".action").addClass("skillPercent");
+            }
+        });
+        $("#future").each(function () {
+            const future_offset = $("#future").offset().top;
+            console.log(future_offset)
+            let scroll = $(window).scrollTop();
+            if (scroll > future_offset - 50) {
+                $(".wrapper").addClass("fade");
+                $(".box").addClass("box_action");
             }
         });
     });
@@ -90,9 +97,9 @@ $(function () {
  * 画像を変更する
  */
 window.addEventListener("load", () => {
-    let anime_action = document.querySelectorAll(".anime_action");
+    const anime_action = document.querySelectorAll(".anime_action");
 
-    let genre = document.querySelectorAll(".genre");
+    const genre = document.querySelectorAll(".genre");
     genre[0].style.backgroundColor = "rgb(14 165 233 / var(--tw-bg-opacity))";
     for (let i = 0; i < genre.length; i++) {
         genre[i].addEventListener("click", function () {
@@ -121,12 +128,17 @@ window.addEventListener("load", () => {
 /**
  * 出身地のアコーディオン
  */
-// .s_01 .accordion_one
 $(function () {
-    //.accordion_oneの中の.accordion_headerがクリックされたら
     $(".accordion_header").click(function () {
-        //クリックされた.accordion_oneの中の.accordion_headerに隣接する.accordion_innerが開いたり閉じたりする。
         $(this).next(".accordion_inner").slideToggle();
         $(this).toggleClass("open");
+    });
+});
+/**
+ * 今後
+ */
+$(function () {
+    $(".box").click(function () {
+        $(this).addClass("reverse");
     });
 });
